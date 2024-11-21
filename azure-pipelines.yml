@@ -20,3 +20,13 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: HCLAppScanOnCloud@2
+  inputs:
+    AppSecTestService: 'DevSecOps'
+    applications: '7c90ede6-3729-4b52-96ab-94c5d4faa85b'
+    scanname: 'SAST'
+    scantype: 'static'
+    scanMethod: 'IRX'
+    SourceCodeScanOnly: true
+    includeSCA: false
+    ScanSpeedOptions: 'thorough'
